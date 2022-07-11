@@ -78,7 +78,7 @@ RUN set -ex && \
 
 WORKDIR /xmage
 
-RUN curl http://beta.xmage.today/files/mage-update_1.4.51-dev_2022-07-09_15-23.zip | xargs curl -# -L > xmage.zip \
+RUN curl -L -o xmage.zip http://beta.xmage.today/files/mage-update_1.4.51-dev_2022-07-09_15-23.zip \
  && unzip xmage.zip -x "mage-client*" \
  && rm xmage.zip \
  && apk del curl jq
